@@ -67,32 +67,56 @@ $(document).ready(function(){
 		tok_id = id.split(" ");
 		lat = tok_id[0];
 		lon = tok_id[1];
-		alert(lat + lon);
 
 
-	// 	function initialize() {
-	// 	  var myLatlng = new google.maps.LatLng(lat,lon);
-	// 	  var mapOptions = {
-	// 	    zoom: 4,
-	// 	    center: myLatlng
-	// 	  }
-	// 	  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		// function initialize() {
+		//   var myLatlng = new google.maps.LatLng(lat,lon);
+		//   var mapOptions = {
+		//     zoom: 4,
+		//     center: myLatlng
+		//   }
+		//   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-	// 	  var marker = new google.maps.Marker({
-	// 	      position: myLatlng,
-	// 	      map: map,
-	// 	      title: 'Hello World!'
-	// 	  });
-	// 	}
+		//   var marker = new google.maps.Marker({
+		//       position: myLatlng,
+		//       map: map,
+		//       title: 'Hello World!'
+		//   });
+		// }
 
-	// 	google.maps.event.addDomListener(window, 'load', initialize);
-	imgPaht = "http://maps.google.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&markers=" + lat + "," + lon + "&size=300x400&sensor=false&key=ABQIAAAA6-Rq-t8XwsqXeXws3DleLBSI_7XewNJfovQwsmZjGMbTG7rp6BQaj3bwm-gy7nGQPyWKPTd3zPtcVA";
-	$('<img src="'+ imgPaht +'">').load(function() {
-		$('#map').html("");
-	  $(this).width(400).height(400).appendTo('#map');
-	});
+		// google.maps.event.addDomListener(window, 'load', initialize);
+
+
+		imgPaht = "http://maps.google.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&markers=" + lat + "," + lon + "&size=300x400&sensor=true&key=ABQIAAAA6-Rq-t8XwsqXeXws3DleLBSI_7XewNJfovQwsmZjGMbTG7rp6BQaj3bwm-gy7nGQPyWKPTd3zPtcVA";
+		$('<img src="'+ imgPaht +'">').load(function() {
+			$('#map').html("");
+		  $(this).width(400).height(400).appendTo('#map');
+		});
 
 	 });
+
+	// $('#submit').click(function(){
+	// 	var name = $('#name').val();
+	// 	var latitude = $('#latitude').val();
+	// 	var longitude = $('#longitude').val();
+
+	// 	var toilet = {
+	// 		toilet: {
+	// 			name: $('#name').val(),
+	// 			latitude: $('#latitude').val(),
+	// 			longitude: $('#longitude').val()
+	// 		}
+	// 	};
+
+	// 	$.ajax({
+	// 		type: 'POST',
+	// 		url: "http://127.0.0.1:3000/toilets",
+	// 		data: toilet,
+	// 		success: function(newData){
+	// 			console.log(newData);
+	// 		}
+	// 	});
+	// });
 
 
 	
